@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Margarine&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container{
+  font-family: "Margarine", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 18, 207);
+  height: 100vh;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+li a{
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.list{
+  transition: 1s;
+}
+.list::before{
+  content:'';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scaleY(2);
+  transition: 1s;
+  border-top: 2px solid rgb(25, 0, 255);
+  border-bottom: 2px solid rgb(25, 0, 255);
+}
+.list:hover::before{
+  transform: scaleY(1.2);
+  opacity: 1;
+}
+.list::after {
+  content: '';
+  background: rgb(25, 0, 255);
+  position: absolute;
+  top: 2;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  transform: scale(0);
+  z-index: -1;
+}
+.list:hover::after{
+  transform: scale(1);
+}
+.list:hover{
+  color: aliceblue;
+}
